@@ -3,7 +3,7 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 // components or modules
 // all your components is here
-import Home from './app/modules/home/home';
+import Home from './app/modules/home/pages/home';
 import Message from './app/modules/message/message';
 
 export default function Routes() {

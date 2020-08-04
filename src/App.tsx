@@ -2,7 +2,7 @@ import React from 'react';
 import Routes from './routes';
 
 // apollo dependencies
-import { ApolloProvider } from 'react-apollo';
+import { ApolloProvider } from '@apollo/client';
 import apolloClient from './config/service/api/apollo';
 
 function App() {
