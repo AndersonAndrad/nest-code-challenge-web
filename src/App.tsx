@@ -1,10 +1,17 @@
 import React from 'react';
+import Routes from './routes';
+
+// apollo dependencies
+import { ApolloProvider } from 'react-apollo';
+import apolloClient from './config/service/api/apollo';
 
 function App() {
   return (
-    <div className="App">
-      <h1>this app is running</h1>
-    </div>
+    <ApolloProvider client={apolloClient}>
+      <div className="App">
+        <Routes />
+      </div>
+    </ApolloProvider>
   );
 }
 
