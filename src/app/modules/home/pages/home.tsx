@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 // component shared
 import Button from '../../../../shared/button/button.component';
+import Title from '../../../../shared/title/title.component';
 
 // components
 import Card from '../components/message/message.component';
@@ -31,6 +32,7 @@ export default function Home() {
 
   return (
     <div>
+      <Title email="people@outlook.com" />
       {messages.map((message: IMessage) => (
         <li key={message.id}>
           <Card
