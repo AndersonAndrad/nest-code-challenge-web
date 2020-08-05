@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react';
 // component shared
 import Button from '../../../../shared/button/button.component';
 
+// components
+import Card from '../components/message/message.component';
+
 // interface
 import { IMessage } from '../interfaces/message.interface';
 
@@ -28,15 +31,16 @@ export default function Home() {
 
   return (
     <div>
-      <ul>
-        {messages.map((message: IMessage) => (
-          <li key={message.id}>
-            <label>{message.id}</label>
-            <label>{message.user.email}</label>
-            <label>{message.content}</label>
-          </li>
-        ))}
-      </ul>
+      {messages.map((message: IMessage) => (
+        <li key={message.id}>
+          <Card
+            email={message.user.email}
+            idMessage={message.id}
+            text={message.content}
+          />
+        </li>
+      ))}
+
       <Button text="Send" />
     </div>
   );
