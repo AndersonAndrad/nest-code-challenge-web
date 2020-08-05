@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
+// component shared
+import Button from '../../../../shared/button/button.component';
+
 // interface
 import { IMessage } from '../interfaces/message.interface';
 
@@ -34,6 +37,7 @@ export default function Home() {
           </li>
         ))}
       </ul>
+      <Button text="Send" />
     </div>
   );
 }
