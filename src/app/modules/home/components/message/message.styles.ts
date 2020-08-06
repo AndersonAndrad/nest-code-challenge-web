@@ -3,7 +3,12 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   margin: 20px;
+  /* background: #f14; */
+  width: 100%;
+  height: 100%;
+  min-width: 500px;
 `;
 
 export const Card = styled.div`
@@ -26,5 +31,12 @@ export const TitleContainer = styled.div`
 `;
 
 export const TextContainer = styled.div`
-  padding: 10px 20px 10px 20px;
+  padding: 10px 0px 10px 0px;
+  height: 100%;
+
+  label {
+    width: 100%;
+    height: 100%;
+    margin: 0px 20px 0px 20px;
+  }
 `;

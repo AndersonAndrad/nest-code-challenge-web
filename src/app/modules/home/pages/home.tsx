@@ -16,10 +16,12 @@ import { GET_USERS_MESSAGES } from '../querys/message.query';
 // apollo dependencies
 import { useQuery } from '@apollo/client';
 
-interface IUser {
-  id: string;
-  email: string;
-}
+// styles
+import {
+  Container,
+  MessageContainer,
+  ButtonContainer,
+} from '../styles/home.styles';
 
 export default function Home() {
   const [messages, setMessages] = useState([]);
@@ -28,22 +30,26 @@ export default function Home() {
 
   useEffect(() => {
     if (data !== undefined) setMessages(data.getMessages);
-  }, [data]);
+  }, [data, setMessages]);
 
   return (
-    <div>
+    <Container>
       <Title email="people@outlook.com" />
-      {messages.map((message: IMessage) => (
-        <li key={message.id}>
-          <Card
-            email={message.user.email}
-            idMessage={message.id}
-            text={message.content}
-          />
-        </li>
-      ))}
-
-      <Button text="Send" />
-    </div>
+      <MessageContainer>
+        {messages.map((message: IMessage) => (
+          <li key={message.id}>
+            <Card
+              email={message.user.email}
+              idMessage={message.id}
+              text={message.content}
+            />
+          </li>
+        ))}
+      </MessageContainer>
+      <ButtonContainer>
+        <input type="" />
+        <Button text="Send" />
+      </ButtonContainer>
+    </Container>
   );
 }
